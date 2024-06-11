@@ -1,0 +1,2 @@
+# Location_Optimization_For_Delivery_Service_Using_Causal_Inference
+Logistic Optimization with Causal Inference for Gokada, a Nigerian last-mile delivery service, aims to improve driver placement and increase delivery completions. Using Causal Inference, the project will identify factors behind unfulfilled requests and recommend optimal driver locations, enhancing efficiency and customer satisfaction. 
