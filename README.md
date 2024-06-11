@@ -2,13 +2,13 @@
 
 ## Overview
 
-Client: Gokada, a last-mile delivery service in Nigeria.
+**Client:** Gokada, a last-mile delivery service in Nigeria.
 
-Business Need: Optimize the placement of drivers (referred to as pilots) to increase the fraction of completed delivery orders.
+**Business Need:** Optimize the placement of drivers (referred to as pilots) to increase the fraction of completed delivery orders.
 
-Key Issue: Sub-optimal placement of drivers leading to a high number of unfulfilled requests.
+**Key Issue:** Sub-optimal placement of drivers leading to a high number of unfulfilled requests.
 
-Proposed Methodology: Use Causal Inference to understand the primary causes of unfulfilled requests and recommend optimal driver locations.
+**Proposed Methodology:** Use Causal Inference to understand the primary causes of unfulfilled requests and recommend optimal driver locations.
 
 # Plan
 
@@ -58,3 +58,19 @@ Proposed Methodology: Use Causal Inference to understand the primary causes of u
 - Read references on integer and linear programming optimization.
 - Transform data to be suitable for placement optimization.
 - Explore ML and optimization techniques for driver placement.
+
+## Code Structure
+
+      ├── notebooks
+      │   ├──
+      │   └── 
+      ├── data
+      │   ├── nb.csv                # Completed Orders
+      │   └── driver_locations
+      │       _during_request.csv   # Delivery Requests
+      │  
+      ├── Dockerfile                # Docker configuration
+      ├── docker-compose.yml        # Docker Compose configuration
+      ├── requirements.txt          # List of dependencies required for the project
+      ├── README.md                 # Project documentation
+      └── notebooks                 # Jupyter notebooks for experimentation and development
