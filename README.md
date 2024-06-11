@@ -12,7 +12,7 @@ Proposed Methodology: Use Causal Inference to understand the primary causes of u
 
 # Plan
 
-## Data Exploration
+1. ## Data Exploration
 
 ### Conduct Exploratory Data Analysis (EDA)
 - Load and inspect the datasets.
@@ -30,13 +30,13 @@ Proposed Methodology: Use Causal Inference to understand the primary causes of u
 - Use purpose-driven visualization tools like Datashader.
 - Create visualizations to communicate insights effectively.
 
-## Creative Visualization
+2. ## Creative Visualization
 
 ### Interactive Web-Based Visualization
 - Develop an interactive visualization to tell a story (e.g., similar to "A Day in the Life" of a NYC taxi).
 - Use Python libraries like Flask or Streamlit for web-based visualizations.
 
-## Causal Learning
+3. ## Causal Learning
 
 ### Data Splitting
 - Split the data into training and hold-out sets.
@@ -52,7 +52,7 @@ Proposed Methodology: Use Causal Inference to understand the primary causes of u
 - Train ML models using all variables and variables selected by the causal graph.
 - Evaluate model performance and overfitting on the hold-out set.
 
-## Logistic Optimization
+4. ## Logistic Optimization
 
 ### Integer and Linear Programming
 - Read references on integer and linear programming optimization.
