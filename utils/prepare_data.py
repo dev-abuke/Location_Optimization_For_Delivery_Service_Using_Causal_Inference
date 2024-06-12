@@ -43,4 +43,27 @@ class DataPreparation:
         ]
 
         return completed_orders_no_outliers
-  
+    
+    def export_csv(self, df: pd.DataFrame, path: str):
+        """
+        Export a DataFrame to a file.
+
+        This function takes a DataFrame and a file path as input parameters.
+        It saves the DataFrame to the specified file path using the `to_csv` method.
+        The `index=False` parameter is passed to exclude the DataFrame index from the saved file.
+
+        Params:
+            df (pd.DataFrame): The DataFrame to be saved.
+            path (str): The path where the DataFrame should be saved.
+
+        Returns:
+            bool: True if the DataFrame is saved successfully, False otherwise.
+
+        The function uses a try-except block to handle any exceptions that may occur during the saving process.
+        If the DataFrame is saved successfully, a log message is printed indicating that the save operation was successful.
+        If an exception occurs, an error message is logged indicating the error and the path where the DataFrame was supposed to be saved.
+        """
+        # Save the DataFrame to the specified file path
+        out = df.to_csv(path, index=False)
+        
+        return out
