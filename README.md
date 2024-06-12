@@ -32,6 +32,7 @@ This project aims to optimize the placement of Gokada drivers to increase the fr
 ## Requirements
 - Python 3.11
 - pandas
+- geopy
 - numpy
 - matplotlib
 - seaborn
