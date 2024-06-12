@@ -25,4 +25,30 @@ class FeatureEngineer:
         weather_data = weather_data.fetch()
 
         return weather_data
-   
+     
+    def get_location_name_from_coordinates(self, lat, long):
+        import pandas as pd
+
+        # Get the unique values of the "Trip Origin" column
+        unique_values = self.df['Trip Origin'].unique()
+
+        print("The unique values in the 'Trip Origin' column are: ",len(unique_values))
+        # Create an empty list to store the reverse geocoded values
+        reverse_geocoded_values = []
+
+        # Create a geocoder object
+        geolocator = Photon(user_agent="measurements")
+
+        # Iterate over each unique value and perform reverse geocoding
+        i = 1
+        for value in unique_values:
+            location = geolocator.reverse(value)
+            if location:
+                reverse_geocoded_values.append(location.address)
+                print(i, ". Address is :: ", location.address)
+            else:
+                reverse_geocoded_values.append(None)
+                print(i, ". Address Not Found :: ", value)
+            i = i + 1
+        # Create a new column in the DataFrame with the reverse geocoded values
+        self.df['Location Name'] = pd.Series(reverse_geocoded_values)
