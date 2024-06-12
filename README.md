@@ -1,6 +1,9 @@
 # Logistic Optimization with Causal Inference
 
-## Overview
+## Project Overview
+This project aims to optimize the placement of Gokada drivers to increase the fraction of completed delivery orders using causal inference methodologies. The project involves data exploration, feature engineering, and causal analysis to identify the primary causes of unfulfilled requests and recommend optimal driver locations.
+
+## Business Need
 
 **Client:** Gokada, a last-mile delivery service in Nigeria.
 
@@ -9,6 +12,30 @@
 **Key Issue:** Sub-optimal placement of drivers leading to a high number of unfulfilled requests.
 
 **Proposed Methodology:** Use Causal Inference to understand the primary causes of unfulfilled requests and recommend optimal driver locations.
+
+
+## How to Run
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/dev-abuke/Location_Optimization_For_Delivery_Service_Using_Causal_Inference CausalInference
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd CausalInference
+    ```
+3. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Run the notebooks and scripts as needed.
+
+## Requirements
+- Python 3.11
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- meteostat
 
 # Plan
 
@@ -74,3 +101,13 @@
       ├── requirements.txt          # List of dependencies required for the project
       ├── README.md                 # Project documentation
       └── notebooks                 # Jupyter notebooks for experimentation and development
+
+## Directory Structure
+- `data/`: Contains sample data files.
+- `notebooks/`: Jupyter notebooks for data exploration and feature engineering.
+- `scripts/`: Python scripts for data processing and causal inference.
+- `README.md`: Project overview and instructions.
+- `Interim_Submission_Report.pdf`: Interim submission report.
+
+## Contributing
+Contributions are welcome! Please create a pull request or open an issue to discuss your changes.
