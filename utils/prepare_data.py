@@ -26,3 +26,21 @@ class DataPreparation:
         time_diff = df_end_col - df_start_col
         return time_diff
     
+    def remove_outliers(self, df: pd.DataFrame):
+        # Calculate the Interquartile Range (IQR)
+        Q1 = df['Trip Duration'].quantile(0.25)
+        Q3 = df['Trip Duration'].quantile(0.75)
+        IQR = Q3 - Q1
+
+        # Determine outlier thresholds
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+
+        # Filter out outliers
+        completed_orders_no_outliers = df[
+            (df['Trip Duration'] >= lower_bound) &
+            (df['Trip Duration'] <= upper_bound)
+        ]
+
+        return completed_orders_no_outliers
+  
