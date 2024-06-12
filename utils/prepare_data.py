@@ -67,3 +67,13 @@ class DataPreparation:
         out = df.to_csv(path, index=False)
         
         return out
+    
+    def get_trip_duration(self, df_start_col: pd.DataFrame, df_end_col: pd.DataFrame):
+        """
+        calculate the time taken to complete an order
+        Parameters: start datetime, end datetime
+        Returns: duration in minutes
+        """
+        time_diff = df_end_col - df_start_col.dt.total_seconds() / 60
+        
+        return time_diff
