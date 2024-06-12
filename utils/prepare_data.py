@@ -48,20 +48,18 @@ class DataPreparation:
         """
         Export a DataFrame to a file.
 
-        This function takes a DataFrame and a file path as input parameters.
-        It saves the DataFrame to the specified file path using the `to_csv` method.
-        The `index=False` parameter is passed to exclude the DataFrame index from the saved file.
+        This function takes in two parameters:
+        - df: The DataFrame to be exported.
+        - path: The file path where the DataFrame will be saved.
 
-        Params:
-            df (pd.DataFrame): The DataFrame to be saved.
-            path (str): The path where the DataFrame should be saved.
+        This function returns a value. The return value is the result of calling the to_csv method on the DataFrame.
+        The to_csv method is called with two arguments:
+        - path: The file path where the DataFrame will be saved.
+        - index=False: This argument is used to exclude the index column from the saved file.
 
-        Returns:
-            bool: True if the DataFrame is saved successfully, False otherwise.
+        The purpose of this function is to save a DataFrame to a file in the CSV format.
+        The CSV file will not include the index column of the DataFrame.
 
-        The function uses a try-except block to handle any exceptions that may occur during the saving process.
-        If the DataFrame is saved successfully, a log message is printed indicating that the save operation was successful.
-        If an exception occurs, an error message is logged indicating the error and the path where the DataFrame was supposed to be saved.
         """
         # Save the DataFrame to the specified file path
         out = df.to_csv(path, index=False)
