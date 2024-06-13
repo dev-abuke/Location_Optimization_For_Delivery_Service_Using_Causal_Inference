@@ -75,3 +75,36 @@ class DataPreparation:
         time_diff = df_end_col - df_start_col.dt.total_seconds() / 60
         
         return time_diff
+    
+    def convert_to_datetime(self, df: pd.DataFrame,
+                            columns: list) -> pd.DataFrame:
+        """
+        This method converts specified columns in a DataFrame to the datetime
+        data type. It takes in two parameters:
+        
+        - df: The DataFrame containing the columns to be converted.
+        - columns: A list of column names in the DataFrame that should be
+          converted to the datetime data type.
+        
+        It returns the modified DataFrame with the specified columns converted
+        to the datetime data type. If an error occurs during the conversion,
+        the error message is printed to the console.
+        """
+        try:
+            # Iterate over each column in the specified list
+            for col in columns:
+                # Convert the column to the datetime data type using the
+                # pd.to_datetime function. If an error occurs during the
+                # conversion, the error message is raised.
+                df[col] = pd.to_datetime(df[col], errors='raise')
+                # Print a message indicating that the conversion was
+                # successful for the current column.
+                print(f'feature: {col} successfully changed to datetime')
+        except Exception as e:
+            # If an error occurs during the conversion, print the error
+            # message to the console.
+            print(e)
+        finally:
+            # Return the modified DataFrame with the specified columns
+            # converted to the datetime data type.
+            return df
