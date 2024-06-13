@@ -2,3 +2,5 @@ pandas
 matplotlib
 meteostat
 geopy
+holidays
+seaborn
