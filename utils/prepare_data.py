@@ -108,3 +108,60 @@ class DataPreparation:
             # Return the modified DataFrame with the specified columns
             # converted to the datetime data type.
             return df
+    def drop_features(self, df: pd.DataFrame, cols: list,
+                             use_reg_ex: bool = False) -> pd.DataFrame:
+        """
+        This method removes specified columns from a DataFrame.
+
+        Parameters:
+        - df: The DataFrame from which to remove the specified columns.
+        - cols: A list of column names to be removed from the DataFrame.
+        - use_reg_ex: A boolean indicating whether the column names in 'cols'
+          should be interpreted as regular expressions. Default is False.
+
+        Returns:
+        - df: The DataFrame with the specified columns removed.
+
+        This method iterates over each column name in 'cols' and performs the
+        following steps:
+        1. If 'use_reg_ex' is True, it uses the 'filter' method of the DataFrame
+           to find all columns that match the regular expression in the current
+           column name. It then converts the resulting Series to a list and
+           removes those columns from the DataFrame.
+        2. If 'use_reg_ex' is False, it removes the current column from the
+           DataFrame.
+        3. It prints a message indicating that the column was successfully
+           removed.
+
+        If any error occurs during the removal process, it prints the error
+        message to the console.
+
+        Finally, it returns the modified DataFrame.
+        """
+        try:
+            if use_reg_ex:
+                # Iterate over each column name in cols
+                for col in cols:
+                    # Use the filter method to find all columns that match the
+                    # regular expression in the current column name
+                    regex_cols = df.filter(regex=col).columns.tolist()
+                    # Convert the resulting Series to a list
+                    regex_cols = list(regex_cols)
+                    # Remove the identified columns from the DataFrame
+                    df = df[df.columns.drop(regex_cols)]
+                    # Print a message indicating that the column was removed
+                    print(f'feature: {col} removed successfully')
+            else:
+                # Iterate over each column name in cols
+                for col in cols:
+                    # Remove the current column from the DataFrame
+                    df = df.drop(columns=[col])
+                    # Print a message indicating that the column was removed
+                    print(f'feature: {col} removed successfully')
+        except Exception as e:
+            # If an error occurs during the removal process, print the error
+            # message to the console
+            print(e)
+        finally:
+            # Return the modified DataFrame
+            return df
