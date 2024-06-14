@@ -4,3 +4,5 @@ meteostat
 geopy
 holidays
 seaborn
+geopandas
+shapely
