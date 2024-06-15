@@ -6,3 +6,7 @@ holidays
 seaborn
 geopandas
 shapely
+plotly
+sqlalchemy
+nbformat
+folium
