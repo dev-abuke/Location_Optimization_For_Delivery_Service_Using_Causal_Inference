@@ -10,3 +10,7 @@ plotly
 sqlalchemy
 nbformat
 folium
+numpy
+flake8
+fastapi
+uvicorn
