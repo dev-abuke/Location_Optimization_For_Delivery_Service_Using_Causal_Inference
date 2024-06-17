@@ -30,7 +30,7 @@ This project aims to optimize the placement of Gokada drivers to increase the fr
 4. Run the notebooks and scripts as needed.
 
 ## Requirements
-- Python 3.11
+- Python 3.10 or less 
 - pandas
 - geopy
 - numpy
