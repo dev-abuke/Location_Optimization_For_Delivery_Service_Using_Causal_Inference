@@ -89,26 +89,73 @@ This project aims to optimize the placement of Gokada drivers to increase the fr
 
 ## Code Structure
 
-      ├── notebooks
-      │   ├──
-      │   └── 
+      ├── notebooks                 # Jupyter notebooks for experimentation and development
+      │   ├──eda.ipynb
+      │   ├──feature_engineering.ipynb
+      │   └──causal_infernce.ipynb
       ├── data
       │   ├── nb.csv                # Completed Orders
       │   └── driver_locations
       │       _during_request.csv   # Delivery Requests
       │  
-      ├── Dockerfile                # Docker configuration
+      ├── Dockerfile.backend        # Docker configuration for backend
       ├── docker-compose.yml        # Docker Compose configuration
       ├── requirements.txt          # List of dependencies required for the project
       ├── README.md                 # Project documentation
-      └── notebooks                 # Jupyter notebooks for experimentation and development
+      └── notebooks                 
+
+## Building and Running the Docker Container
+
+**Build the Docker image**
+
+    ```sh
+    docker build -t gokada-logistics-optimization .
+    ```
+**Run the Docker container**
+
+    ```sh
+    docker run -d -p 80:80 gokada-logistics-optimization
+    ```
 
 ## Directory Structure
 - `data/`: Contains sample data files.
 - `notebooks/`: Jupyter notebooks for data exploration and feature engineering.
-- `scripts/`: Python scripts for data processing and causal inference.
+- `utils/`: Python scripts for data processing and causal inference.
 - `README.md`: Project overview and instructions.
-- `Interim_Submission_Report.pdf`: Interim submission report.
+
+## API Endpoints
+**Root**
+```sh
+GET /
+```
+Welcome message.
+
+**Data Endpoints**
+```sh
+GET /data/completed-orders
+```
+Fetches completed orders data.
+
+```sh
+GET /data/driver-locations
+```
+Fetches driver locations data during requests.
+
+## Backend Description
+```sh
+backend/main.py
+```
+The main entry point for the FastAPI application. It initializes the app and includes the routes defined in the data module.
+
+```sh
+backend/routes/data.py
+```
+Defines the API endpoints for accessing the completed orders and driver locations data.
+
+```sh
+requirements.txt
+```
+Lists the dependencies required for the project.
 
 ## Contributing
 Contributions are welcome! Please create a pull request or open an issue to discuss your changes.
