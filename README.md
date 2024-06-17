@@ -38,7 +38,7 @@ This project aims to optimize the placement of Gokada drivers to increase the fr
 - seaborn
 - meteostat
 
-# Plan
+# Methodology
 
 ## 1. Data Exploration
 
