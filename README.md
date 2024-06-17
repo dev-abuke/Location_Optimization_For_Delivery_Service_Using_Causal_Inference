@@ -108,14 +108,14 @@ This project aims to optimize the placement of Gokada drivers to increase the fr
 
 **Build the Docker image**
 
-    ```sh
-    docker build -t gokada-logistics-optimization .
-    ```
+```sh
+docker build -t gokada-logistics-optimization .
+```
 **Run the Docker container**
 
-    ```sh
-    docker run -d -p 80:80 gokada-logistics-optimization
-    ```
+```sh
+docker run -d -p 80:80 gokada-logistics-optimization
+```
 
 ## Directory Structure
 - `data/`: Contains sample data files.
